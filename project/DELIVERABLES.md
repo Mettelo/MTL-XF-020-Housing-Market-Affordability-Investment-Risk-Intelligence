@@ -1,37 +1,108 @@
 # Required Deliverables
 
-## D1 — Discovery & Requirements
-Stakeholder map, decision process, user stories, requirements, assumptions and acceptance criteria. `docs/01-discovery/`
+## D1 — Discovery, Decision & Requirements Pack
+**Due:** Week 1  
+**Location:** `docs/01-discovery/`
 
-## D2 — Data Governance & Source Assessment
-Source register, glossary, critical data elements, geographic definitions, ownership, lineage and DQ rules. `docs/02-data-governance/`
+Decision statement; stakeholder map; as-is/to-be process; minimum 8 prioritised functional/user requirements; non-functional requirements; assumptions/dependencies; mapped acceptance criteria.
 
-## D3 — Reproducible Ingestion & Transformation
-Acquisition, time-series preparation, geography standardisation and transformation logic. `src/`, `sql/`, `docs/03-data-model/`
+**Acceptance:** every planned feature/analysis maps to an approved requirement.
 
-## D4 — Data Quality & Analytical Model
-Profiling, validation, missingness, historical comparability, grain and model. `docs/04-data-quality/`
+## D2 — Data Governance & Source Control Pack
+**Due:** Week 2  
+**Location:** `docs/02-data-governance/`, `data/SOURCE_REGISTER.md`
+
+Frozen-source inventory; glossary; critical data elements; owner/steward assumptions; lineage; DQ rules; reuse notes; governance risks.
+
+**Acceptance:** every headline KPI traces to governed source fields.
+
+## D3 — Reproducible Ingestion & Analytical Model
+**Due:** Week 3  
+**Location:** `src/`, `sql/`, `docs/03-data-model/`
+
+Load process; raw preservation; schema/type checks; standardisation; keys/grain; curated tables; rerun instructions; exception handling.
+
+**Acceptance:** same frozen input produces equivalent curated output on clean rerun.
+
+## D4 — Data Quality, Reconciliation & Exceptions
+**Due:** Week 3  
+**Location:** `docs/04-data-quality/`, `tests/`
+
+Row/value reconciliation; duplicates; missingness; accepted values/ranges; exception log; inclusion/exclusion rules.
+
+**Acceptance:** material exclusions/adjustments are quantified and explained.
 
 ## D5 — KPI & Metric Catalogue
-Definitions, formulas, purpose, source, exclusions, owner and limitations. `docs/05-kpi-catalogue/`
+**Due:** Week 4  
+**Location:** `docs/05-kpi-catalogue/`
 
-## D6 — Housing Market Analytical Assessment
-Deliver house-price trends, transaction activity, property type, buyer type, geographic variation, affordability-pressure proxies and intervention-prioritisation scenarios. `analysis/`, `docs/06-analysis/`
+Minimum metrics:
+- average/median HPI measure as defined by source;
+- annual price change;
+- monthly/period price change;
+- sales/transaction measure where available;
+- property-type price index/value;
+- first-time buyer measure where available;
+- multi-period sustained-growth flag;
+- market-pressure indicator components;
+- data continuity/completeness flag;
+- geographic coverage;
 
-## D7 — Decision / Prioritisation Framework
-Create transparent evidence-to-investigation logic. Explicitly distinguish price pressure from true affordability and record data needed for stronger decisions. `docs/07-decision-framework/`
+Each metric requires purpose, definition, formula, grain, source, exclusions, owner, refresh expectation and limitation.
+
+## D6 — Core Analytical Assessment I
+**Due:** Week 5  
+**Location:** `analysis/`, `docs/06-analysis/`
+
+- multi-period price trends;
+- transaction/activity context;
+- property-type variation;
+- buyer-type variation where supported;
+
+Each major finding states comparison basis, materiality and limitation.
+
+## D7 — Core Analytical Assessment II & Decision Framework
+**Due:** Week 6  
+**Location:** `docs/07-decision-framework/`
+
+- multi-indicator market-pressure segmentation;
+- look-back-window sensitivity;
+- composite-weight sensitivity;
+- additional-evidence requirements for affordability claims;
+- explicit factors/thresholds;
+- rationale;
+- at least one sensitivity test;
+- manual-review triggers;
+- evidence insufficient for action.
 
 ## D8 — BI / Decision-Support Product
-Build governed regional/area views, trend analysis and drill-down suitable for housing leadership. `dashboard/`
+**Due:** Draft Week 6; final Week 7  
+**Location:** `dashboard/`
+
+Executive view; diagnostic drill-down; governed measures; source/reporting period; definitions/quality notes; filters; accessibility; reproducible build/access instructions.
+
+**Acceptance:** at least five headline measures reconcile to curated data.
 
 ## D9 — Assurance & UAT
-Provide reconciliations, test scenarios, issue log and user acceptance evidence. `docs/08-assurance-uat/`
+**Due:** Week 7  
+**Location:** `docs/08-assurance-uat/`
+
+Minimum 10 scenarios; calculation/filter/edge checks; reconciliation; defect log; requirement-to-test traceability; UAT feedback; final status.
 
 ## D10 — Technical & Operational Handover
-Document setup, data refresh, transformations, controls, measure logic, dependencies and maintenance. `docs/09-technical-handover/`
+**Due:** Week 8  
+**Location:** `docs/09-technical-handover/`
+
+Setup; run/refresh; architecture/data flow; transformations; metric logic; tests; troubleshooting; limitations; maintenance/change guidance.
 
 ## D11 — Executive Briefing & Presentation
-Present the decision, strongest evidence, caveats, recommendations and next actions. `deliverables/`
+**Due:** Week 8  
+**Location:** `deliverables/`
 
-## D12 — Contribution Record
-Record actual responsibilities and linked GitHub evidence. `CONTRIBUTIONS.md`
+Maximum two-page briefing plus 15–20 minute presentation covering decision, evidence, recommendation/investigation, limitations and next steps.
+
+## D12 — Contribution & Delivery Evidence
+**Due:** Final submission  
+**Location:** `CONTRIBUTIONS.md`
+
+Role, work packages, artefacts, linked issues/PRs/commits, review contribution and presentation contribution. Commit count alone is insufficient.
